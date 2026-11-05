@@ -1,0 +1,16 @@
+{
+  "name": "@imperium/control-plane",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@imperium/core": "workspace:*",
+    "@imperium/protocol": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3"
+  }
+}

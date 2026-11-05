@@ -1,0 +1,33 @@
+{
+  "name": "imperium",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.13.1",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "node -e \"console.error('pnpm dev: not built yet (scripts/dev.ts arrives in slice S6)'); process.exit(1)\"",
+    "build": "pnpm --filter console build",
+    "typecheck": "tsc -p tsconfig.json && pnpm -r typecheck",
+    "lint": "eslint .",
+    "format:check": "prettier --check .",
+    "test": "node --disable-warning=ExperimentalWarning --test \"packages/**/*.test.ts\" \"apps/control-plane/**/*.test.ts\" \"apps/console/src/lib/*.test.ts\" \"tests/boundaries/*.test.ts\"",
+    "test:acceptance": "node --disable-warning=ExperimentalWarning --test \"tests/acceptance/*.test.ts\"",
+    "verify": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test && pnpm test:acceptance && pnpm build",
+    "demo:record": "node --disable-warning=ExperimentalWarning tests/demo/record-cli.ts",
+    "test:e2e": "playwright test",
+    "hero:still": "node --disable-warning=ExperimentalWarning tests/e2e/render-hero.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@playwright/test": "1.62.0",
+    "@types/node": "22.20.4",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.6",
+    "prettier": "3.9.9",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.70.1"
+  }
+}

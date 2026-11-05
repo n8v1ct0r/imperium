@@ -1,0 +1,19 @@
+# Markdown and MDX are excluded so the Phase 1 docs keep their hand-aligned
+# table layout. Prettier would re-pad every table. See docs/decisions.md.
+*.md
+*.mdx
+
+# generated and vendor paths
+pnpm-lock.yaml
+node_modules/
+.next/
+**/next-env.d.ts
+apps/console/public/cesium/
+reports/
+test-results/
+playwright-report/
+.local/
+
+# recorded demo replay (tests/demo/record.ts writes it) and the static export
+apps/console/public/replay/
+apps/console/out/

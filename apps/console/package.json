@@ -1,0 +1,30 @@
+{
+  "name": "@imperium/console",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node ../../scripts/copy-cesium.ts && node ../../scripts/split-replay.ts",
+    "dev": "next dev --hostname 127.0.0.1 --port 3000",
+    "prebuild": "node ../../scripts/copy-cesium.ts && node ../../scripts/split-replay.ts",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1 --port 3000",
+    "typecheck": "next typegen && tsc --noEmit"
+  },
+  "dependencies": {
+    "@imperium/geo": "workspace:*",
+    "@imperium/protocol": "workspace:*",
+    "cesium": "1.145.0",
+    "next": "16.3.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "postcss": "8.5.28",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3"
+  }
+}
